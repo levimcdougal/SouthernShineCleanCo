@@ -730,10 +730,35 @@
   .services-grid-section,
   .addons-section,
   .trust-strip,
-  .services-cta {
+  .services-cta,
+  .services-gallery {
     padding: 56px 20px;
   }
   .page-header {
     padding: 72px 20px 56px;
+  }
+  .service-panel {
+    padding: 48px 20px;
+  }
+  .panel-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .panel-image-col {
+    order: -1;
+  }
+  .panel-icon-large img {
+    width: 180px;
+    height: 180px;
+  }
+  .panel-name {
+    font-size: 1.5rem;
+  }
+  .services-cta h2,
+  .addons-header h2 {
+    font-size: 1.8rem;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
 }

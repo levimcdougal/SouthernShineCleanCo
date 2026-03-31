@@ -265,6 +265,8 @@
   font-size: 0.92rem;
   color: #666;
   line-height: 1.6;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 /* ── FAQ ── */
@@ -330,6 +332,54 @@
 .book-closing p {
   color: rgba(255,255,255,0.7);
   font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .book-cal-section {
+    padding: 48px 20px;
+  }
+
+  .book-cal-inner h2 {
+    font-size: 1.6rem;
+  }
+
+  .book-custom-section {
+    padding: 32px 20px;
+  }
+
+  .book-custom-inner h3 {
+    font-size: 1.25rem;
+  }
+
+  .book-steps-section {
+    padding: 48px 20px;
+  }
+
+  .book-steps {
+    gap: 24px;
+  }
+
+  .book-step {
+    min-width: 140px;
+    max-width: 100%;
+    flex: 1 1 140px;
+  }
+
+  .book-gallery-section {
+    padding: 48px 20px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .book-closing {
+    padding: 48px 20px;
+  }
+
+  .book-closing h3 {
+    font-size: 1.4rem;
+  }
 }
 
 @media (max-width: 640px) {

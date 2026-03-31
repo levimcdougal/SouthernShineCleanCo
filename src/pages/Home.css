@@ -516,14 +516,17 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 80vh;
-    padding: 80px 24px 60px;
+    min-height: 70vh;
+    padding: 72px 20px 52px;
   }
   .hero-decor {
     opacity: 0.3;
   }
   .hero-decor-left { left: -40px; }
   .hero-decor-right { right: -40px; }
+  .hero-sub {
+    font-size: 1rem;
+  }
   .why-cards {
     grid-template-columns: 1fr;
   }
@@ -532,6 +535,14 @@
   }
   .sp-list {
     grid-template-columns: 1fr;
+  }
+  .services-preview-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .sp-visual {
+    flex-direction: row;
+    justify-content: center;
   }
   .cta-banner-inner {
     flex-direction: column;
@@ -543,10 +554,24 @@
   .ba-grid {
     grid-template-columns: 1fr;
   }
+  .ribbon {
+    gap: 18px;
+    padding: 14px 20px;
+  }
   .why-section,
   .services-preview,
   .ba-section,
   .cta-banner {
-    padding: 64px 20px;
+    padding: 56px 20px;
+  }
+  .why-header {
+    margin-bottom: 40px;
+  }
+  .why-header h2,
+  .cta-text h2 {
+    font-size: 1.9rem;
+  }
+  .ba-header h2 {
+    font-size: 1.9rem;
   }
 }
