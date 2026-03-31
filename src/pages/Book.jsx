@@ -10,7 +10,7 @@ import './Book.css';
 export default function Book() {
   useEffect(() => {
     (async function () {
-      const cal = await getCalApi({"namespace":"30min"});
+      const cal = await getCalApi({"namespace":"cleaing"});
       cal("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#25304D"}},"hideEventTypeDetails":false,"layout":"month_view"});
     })();
   }, []);
@@ -26,9 +26,9 @@ export default function Book() {
           <h2>Pick a Date & Time</h2>
           <div className="divider" />
           <Cal
-            namespace="30min"
-            calLink="sscleanco.tx/30min"
-            style={{width:"100%",height:"700px",overflow:"scroll"}}
+            namespace="cleaing"
+            calLink="sscleanco.tx/cleaing"
+            style={{width:"100%",height:"100%",overflow:"scroll"}}
             config={{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}}
           />
         </div>
