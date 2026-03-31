@@ -1,0 +1,778 @@
+/* Inherit page-header from Services.css — shared via index.css */
+/* Ensure the .page-header styles apply here too */
+.book-page .page-header {
+  position: relative;
+  background: var(--navy);
+  padding: 100px 32px 80px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.book-page .page-header-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(201,151,58,0.15) 0%, transparent 60%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.015) 0px,
+      rgba(255,255,255,0.015) 1px,
+      transparent 1px,
+      transparent 60px
+    );
+  pointer-events: none;
+}
+
+.book-page .page-header-content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.book-page .page-header h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--white);
+  margin-bottom: 0;
+}
+
+.book-page .page-header p {
+  color: rgba(255,255,255,0.72);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ── CONTACT CARDS ── */
+.contact-cards {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 64px 32px 32px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 16px;
+  padding: 40px 32px;
+  text-align: center;
+  flex: 1;
+  min-width: 220px;
+  max-width: 280px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+}
+
+.contact-icon {
+  font-size: 2.6rem;
+  margin-bottom: 16px;
+}
+
+.contact-card h3 {
+  font-size: 1.3rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.contact-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.contact-link {
+  display: inline-block;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.contact-note {
+  text-align: center;
+  padding: 16px 32px 64px;
+  color: #555;
+  font-size: 1rem;
+}
+
+.contact-note .aside-floral {
+  font-size: 1.6rem;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+/* ── CALENDAR ── */
+.book-cal-section {
+  padding: 72px 32px;
+  background: var(--cream);
+  text-align: center;
+}
+
+.book-cal-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.book-cal-inner h2 {
+  font-size: 2rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+/* ── PHOTO GALLERY ── */
+.book-gallery-section {
+  padding: 72px 32px;
+  background: var(--white);
+}
+
+.book-gallery-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── INFO STRIP ── */
+.book-info-strip {
+  background: var(--navy);
+  padding: 48px 32px;
+}
+
+.book-info-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.book-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  color: var(--white);
+}
+
+.book-info-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.book-info-item strong {
+  display: block;
+  color: var(--gold);
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.book-info-item p {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.book-info-divider {
+  width: 1px;
+  height: 60px;
+  background: rgba(255,255,255,0.15);
+}
+
+/* ── CUSTOM JOBS CALLOUT ── */
+.book-custom-section {
+  background: var(--navy);
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.book-custom-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.book-custom-inner h3 {
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.book-custom-inner p {
+  color: rgba(255,255,255,0.82);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── HOW IT WORKS ── */
+.book-steps-section {
+  padding: 72px 32px;
+  text-align: center;
+  background: #e4dfd5;
+}
+
+.book-steps-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.book-steps-sub {
+  color: #666;
+  font-size: 1.05rem;
+  margin: 8px 0 0;
+  line-height: 1.7;
+}
+
+.book-steps {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.book-step {
+  flex: 1;
+  min-width: 180px;
+  max-width: 220px;
+}
+
+.book-step-num {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(201,151,58,0.12);
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.book-step h4 {
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.book-step p {
+  font-size: 0.92rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ── FAQ ── */
+.book-faq-section {
+  padding: 72px 32px;
+  text-align: center;
+  background: var(--white);
+}
+
+.book-faq-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.book-faqs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.book-faq {
+  background: var(--cream, #fdf8f2);
+  border-radius: 12px;
+  padding: 28px 24px;
+  border-left: 4px solid var(--gold);
+}
+
+.book-faq h4 {
+  font-size: 1rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.book-faq p {
+  font-size: 0.92rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── CLOSING ── */
+.book-closing {
+  background: var(--navy);
+  text-align: center;
+  padding: 64px 32px;
+  color: var(--white);
+}
+
+.book-closing .aside-floral {
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.book-closing h3 {
+  font-size: 1.8rem;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.book-closing p {
+  color: rgba(255,255,255,0.7);
+  font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+  .book-faqs {
+    grid-template-columns: 1fr;
+  }
+  .book-info-divider {
+    display: none;
+  }
+}
+
+/* ── STEPS BAR ── */
+.steps-bar {
+  background: var(--white);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  padding: 0 32px;
+  overflow-x: auto;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 28px;
+  border-bottom: 3px solid transparent;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(0,0,0,0.35);
+  transition: all 0.3s;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.step-item.active {
+  border-bottom-color: var(--gold);
+  color: var(--navy);
+}
+
+.step-item.done {
+  color: var(--sage);
+  border-bottom-color: var(--sage);
+}
+
+.step-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+
+.step-item.active .step-num {
+  background: var(--gold);
+  color: var(--white);
+}
+
+.step-item.done .step-num {
+  background: var(--sage);
+  color: var(--white);
+}
+
+/* ── FORM SECTION ── */
+.book-form-section {
+  padding: 64px 32px 96px;
+  background: var(--cream);
+}
+
+.book-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 48px;
+  align-items: start;
+}
+
+.book-form {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+}
+
+.form-step h2 {
+  font-size: 1.8rem;
+  color: var(--navy);
+  margin-bottom: 32px;
+}
+
+/* Form inputs */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: var(--text-dark);
+  background: var(--cream);
+  border: 1.5px solid rgba(0,0,0,0.12);
+  border-radius: 8px;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,151,58,0.12);
+}
+
+.form-group input.readonly {
+  background: rgba(0,0,0,0.04);
+  color: var(--text-mid);
+  cursor: not-allowed;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0 20px;
+}
+
+/* Pills */
+.service-pills,
+.addon-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: 2px solid rgba(0,0,0,0.12);
+  background: var(--cream);
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.5px;
+}
+
+.pill:hover {
+  border-color: var(--gold);
+  color: var(--navy);
+}
+
+.pill.selected {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+
+/* Booking summary */
+.booking-summary {
+  background: var(--cream);
+  border: 1.5px solid rgba(201,151,58,0.3);
+  border-radius: 12px;
+  padding: 28px;
+  margin-top: 8px;
+}
+
+.booking-summary h4 {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 8px 16px;
+  font-size: 0.9rem;
+}
+
+.summary-grid span:nth-child(odd) {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.summary-grid span:nth-child(even) {
+  color: var(--text-mid);
+}
+
+/* Form navigation */
+.form-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(0,0,0,0.07);
+}
+
+.btn-outline-nav {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 1px;
+  padding: 13px 28px;
+  border-radius: 4px;
+  border: 2px solid rgba(0,0,0,0.15);
+  background: transparent;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-outline-nav:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+.btn-gold:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-submit {
+  font-size: 1rem;
+  padding: 15px 40px;
+  letter-spacing: 2px;
+}
+
+/* ── ASIDE ── */
+.book-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 90px;
+}
+
+.aside-card {
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 14px;
+  padding: 32px 28px;
+}
+
+.aside-card h3 {
+  font-size: 1.2rem;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+}
+
+.aside-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.aside-card ul li {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.82);
+}
+
+.aside-contact {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 28px;
+  text-align: center;
+  border: 1.5px solid rgba(201,151,58,0.25);
+}
+
+.aside-contact h4 {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.aside-phone {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--navy);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.aside-phone:hover {
+  color: var(--gold);
+}
+
+.aside-contact p {
+  font-size: 0.82rem;
+  color: var(--text-mid);
+}
+
+.aside-floral {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--gold);
+  opacity: 0.4;
+}
+
+/* ── CONFIRMATION ── */
+.confirmation {
+  max-width: 600px;
+  margin: 96px auto;
+  padding: 64px 48px;
+  text-align: center;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.08);
+  border-top: 6px solid var(--gold);
+}
+
+.confirm-icon {
+  font-size: 3rem;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.confirmation h1 {
+  font-size: 2.2rem;
+  color: var(--navy);
+  margin-bottom: 0;
+}
+
+.confirmation p {
+  color: var(--text-mid);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-top: 12px;
+}
+
+.confirm-sub {
+  font-style: italic;
+}
+
+.confirm-sub a {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.confirm-floral {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--navy);
+  opacity: 0.4;
+  margin: 28px 0 32px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .book-inner {
+    grid-template-columns: 1fr;
+  }
+  .book-aside {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .aside-floral {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-form {
+    padding: 32px 24px;
+  }
+  .form-grid-2,
+  .form-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .steps-bar {
+    padding: 0 16px;
+  }
+  .step-item {
+    padding: 16px 14px;
+    font-size: 0.7rem;
+  }
+  .book-aside {
+    grid-template-columns: 1fr;
+  }
+  .book-form-section {
+    padding: 40px 20px 60px;
+  }
+  .confirmation {
+    margin: 40px 20px;
+    padding: 40px 28px;
+  }
+}
