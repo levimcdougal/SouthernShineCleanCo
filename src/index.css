@@ -13,6 +13,10 @@
   --sage: #7a9e7e;
 }
 
+:root {
+  color-scheme: light only;
+}
+
 * {
   margin: 0;
   padding: 0;
