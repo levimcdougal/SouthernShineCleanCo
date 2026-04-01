@@ -1,5 +1,3 @@
-import Cal, { getCalApi } from "@calcom/embed-react";
-import { useEffect } from "react";
 import services1 from '../assets/services1.jpg';
 import services2 from '../assets/services2.jpg';
 import services3 from '../assets/services3.jpg';
@@ -8,12 +6,6 @@ import './Book.css';
 
 
 export default function Book() {
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({"namespace":"cleaing"});
-      cal("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#25304D"}},"hideEventTypeDetails":false,"layout":"month_view"});
-    })();
-  }, []);
 
   return (
     <main className="book-page">
@@ -25,11 +17,11 @@ export default function Book() {
           <span className="section-tag">Schedule Online</span>
           <h2>Pick a Date & Time</h2>
           <div className="divider" />
-          <Cal
-            namespace="cleaing"
-            calLink="sscleanco.tx/cleaing"
-            style={{width:"100%",height:"100%",overflow:"scroll"}}
-            config={{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}}
+          <iframe
+            src="https://cal.com/sscleanco.tx"
+            width="100%"
+            height="800"
+            frameBorder="0"
           />
         </div>
       </section>
