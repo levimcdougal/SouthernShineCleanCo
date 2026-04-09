@@ -251,7 +251,7 @@ export default function Home() {
         <div className="cta-banner-inner">
           <MagnoliaDecor className="cta-mag" />
           <div className="cta-text">
-            <h2>for a Home That Shines?</h2>
+            <h2>Ready for a Home That Shines?</h2>
             <p>Book your clean today and let Southern Shine do the rest.</p>
             <Link to="/book" className="btn-gold">Schedule My Clean</Link>
           </div>
