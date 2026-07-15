@@ -109,6 +109,73 @@
 }
 
 /* ── CALENDAR ── */
+.booking-intro {
+  padding: 72px 32px;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(201,151,58,0.18), transparent 30%),
+    var(--navy);
+  text-align: center;
+}
+
+.booking-intro-inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.booking-intro h1 {
+  color: var(--white);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  margin-bottom: 14px;
+}
+
+.booking-intro-copy {
+  max-width: 670px;
+  margin: 0 auto;
+  color: rgba(255,255,255,0.78);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.keep-together {
+  white-space: nowrap;
+}
+
+.booking-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 34px auto 26px;
+  max-width: 800px;
+  text-align: left;
+}
+
+.booking-checklist div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+}
+
+.booking-checklist span {
+  color: var(--gold-light);
+  font-weight: 700;
+}
+
+.policy-jump-link {
+  display: inline-block;
+  color: var(--gold-light);
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.policy-jump-link:hover {
+  text-decoration: underline;
+}
+
 .book-cal-section {
   padding: 72px 32px;
   background: var(--cream);
@@ -124,6 +191,121 @@
   font-size: 2rem;
   color: var(--navy);
   margin-bottom: 8px;
+}
+
+.booking-agreement {
+  max-width: 780px;
+  margin: 20px auto 0;
+  padding: 16px 20px;
+  border-left: 3px solid var(--gold);
+  background: rgba(201,151,58,0.09);
+  color: #555;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* ── BOOKING POLICIES ── */
+.booking-policies-section {
+  padding: 80px 32px;
+  background: var(--white);
+  scroll-margin-top: 90px;
+}
+
+.booking-policies-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.booking-policies-inner h2 {
+  color: var(--navy);
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+}
+
+.booking-policies-lead {
+  max-width: 650px;
+  margin: 12px auto 0;
+  color: #666;
+  line-height: 1.7;
+}
+
+.policy-list {
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+
+.policy-item {
+  border: 1px solid rgba(26,39,68,0.12);
+  border-radius: 10px;
+  background: var(--cream);
+  overflow: hidden;
+}
+
+.policy-item summary {
+  display: grid;
+  grid-template-columns: 32px 1fr 24px;
+  align-items: center;
+  gap: 12px;
+  padding: 19px 22px;
+  color: var(--navy);
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.policy-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.policy-item[open] summary {
+  background: rgba(201,151,58,0.1);
+  border-bottom: 1px solid rgba(26,39,68,0.1);
+}
+
+.policy-icon {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.policy-toggle {
+  color: var(--gold);
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.policy-item[open] .policy-toggle {
+  transform: rotate(45deg);
+}
+
+.policy-content {
+  padding: 20px 24px 22px 66px;
+  color: #555;
+  line-height: 1.7;
+}
+
+.policy-content p + p,
+.policy-content ul + p {
+  margin-top: 14px;
+}
+
+.policy-content ul {
+  padding-left: 20px;
+}
+
+.policy-content li + li {
+  margin-top: 6px;
+}
+
+.policy-thanks {
+  margin-top: 32px;
+  color: var(--navy);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.08rem;
+  font-style: italic;
 }
 
 /* ── PHOTO GALLERY ── */
@@ -335,6 +517,14 @@
 }
 
 @media (max-width: 768px) {
+  .booking-intro {
+    padding: 56px 20px;
+  }
+
+  .booking-checklist {
+    grid-template-columns: 1fr;
+  }
+
   .book-cal-section {
     padding: 48px 20px;
   }
@@ -379,6 +569,18 @@
 
   .book-closing h3 {
     font-size: 1.4rem;
+  }
+
+  .booking-policies-section {
+    padding: 56px 20px;
+  }
+
+  .policy-item summary {
+    padding: 17px 16px;
+  }
+
+  .policy-content {
+    padding: 18px 18px 20px;
   }
 }
 

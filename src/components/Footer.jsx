@@ -22,6 +22,7 @@ export default function Footer() {
           <Link to="/">Home</Link>
           <Link to="/services">Services</Link>
           <Link to="/book">Book Now</Link>
+          <Link to="/book#booking-policies">Booking Policies</Link>
         </div>
 
         <div className="footer-contact">
