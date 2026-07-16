@@ -158,6 +158,7 @@ export default function Book() {
               <div className="book-step-num">📞</div>
               <h4>Call Us</h4>
               <p><a href="tel:9034565126" className="contact-link">(903) 456-5126</a></p>
+              <p><a href="tel:9452387087" className="contact-link">(945) 238-7087</a></p>
             </div>
             <div className="book-step" style={{maxWidth:'400px'}}>
               <div className="book-step-num">✉️</div>
@@ -168,6 +169,7 @@ export default function Book() {
               <div className="book-step-num">💬</div>
               <h4>Text Us</h4>
               <p><a href="sms:9034565126" className="contact-link">(903) 456-5126</a></p>
+              <p><a href="sms:9452387087" className="contact-link">(945) 238-7087</a></p>
             </div>
           </div>
         </div>

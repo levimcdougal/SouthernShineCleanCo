@@ -28,6 +28,7 @@ export default function Footer() {
         <div className="footer-contact">
           <h4>Get in Touch</h4>
           <p>📞 (903) 456-5126</p>
+          <p>📞 (945) 238-7087</p>
           <p>✉️ southernshinecleancotx@gmail.com</p>
           <p>🕐 Mon – Sat: 7am – 7pm</p>
         </div>
