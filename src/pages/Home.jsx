@@ -82,10 +82,64 @@ const whyCards = [
 ];
 
 const services = [
-  { icon: <img src={house} alt="house" style={{ width: '2rem', height: '2rem', objectFit: 'contain', verticalAlign: 'middle' }} />, name: 'Standard Clean' },
-  { icon: <img src={broom} alt="broom" style={{ width: '2rem', height: '2rem', objectFit: 'contain', verticalAlign: 'middle' }} />, name: 'Deep Clean' },
-  { icon: <img src={box} alt="box" style={{ width: '2rem', height: '2rem', objectFit: 'contain', verticalAlign: 'middle' }} />, name: 'Move-In / Move-Out' },
-  { icon: <img src={building} alt="building" style={{ width: '2rem', height: '2rem', objectFit: 'contain', verticalAlign: 'middle' }} />, name: 'Commercial Clean' },
+  { icon: house, name: 'Standard Cleaning' },
+  { icon: broom, name: 'Deep Clean' },
+  { icon: box, name: 'Move-In / Move-Out Cleaning' },
+  { icon: stars, name: 'Priority Cleaning' },
+  { icon: building, name: 'Organization & Decluttering' },
+  { icon: cowhat, name: 'Handyman Services' },
+];
+
+const membershipPlans = [
+  {
+    medal: '🥉',
+    name: 'Basic Reset',
+    cadence: 'One cleaning every month',
+    accent: 'bronze',
+    prices: [
+      ['Up to 1,500 sq ft', '$180/month'],
+      ['1,501–2,500 sq ft', '$240/month'],
+      ['2,501–3,500 sq ft', '$300/month'],
+    ],
+  },
+  {
+    medal: '🥈',
+    name: 'Balance',
+    cadence: 'Two cleanings every month',
+    accent: 'silver',
+    featured: true,
+    prices: [
+      ['Up to 1,500 sq ft', '$320/month'],
+      ['1,501–2,500 sq ft', '$420/month'],
+      ['2,501–3,500 sq ft', '$520/month'],
+    ],
+  },
+  {
+    medal: '🥇',
+    name: 'Weekly Refresh',
+    cadence: 'One cleaning every week',
+    accent: 'gold',
+    prices: [
+      ['Up to 1,500 sq ft', '$560/month'],
+      ['1,501–2,500 sq ft', '$720/month'],
+      ['Over 2,500 sq ft', 'Contact Us for a Custom Quote'],
+    ],
+  },
+];
+
+const membershipBenefits = [
+  ['✦', 'First cleaning upgraded to a Deep Clean'],
+  ['◷', 'Priority scheduling'],
+  ['⌂', 'Recurring scheduled service'],
+  ['$', 'Member pricing on eligible add-on services'],
+];
+
+const bookingSteps = [
+  'Complete the membership intake form on Cal.com.',
+  'We review your home information.',
+  'We send your Stripe recurring subscription link.',
+  'Subscribe securely through Stripe.',
+  'We schedule your recurring cleanings.',
 ];
 
 const beforeAfterPairs = [
@@ -98,8 +152,8 @@ const beforeAfterPairs = [
 export default function Home() {
   return (
     <main className="home">
-      {/* ── HERO ── */}
-      <section className="hero">
+      {/* ── MEMBERSHIP HERO ── */}
+      <section className="hero membership-hero" id="membership">
         <div className="hero-bg-texture" />
         <div className="hero-decor hero-decor-left">
           <BluebonnetDecor />
@@ -112,30 +166,119 @@ export default function Home() {
 
         <div className="hero-content">
           <div className="hero-logo-wrap">
-            <img src={logo} alt="Southern Shine Logo" style={{ width: '340px', height: 'auto' }} />
+            <img src={logo} alt="Southern Shine Clean Co. TX" />
           </div>
-          <h1 className="hero-title">
-            A Cleaner Home,<br />
-            <em>the Southern Way.</em>
-          </h1>
+          <span className="hero-eyebrow">Our Flagship Recurring Service</span>
+          <h1 className="hero-title">Southern Standard<br /><em>Membership</em></h1>
           <div className="divider" />
           <p className="hero-sub">
-            Professional home &amp; commercial cleaning rooted in Texas charm.
-            We bring the shine, you enjoy the time.
+            Keep your home consistently clean with recurring professional cleaning designed around your lifestyle.
           </p>
           <div className="hero-ctas">
-            <Link to="/book" className="btn-gold">Book a Clean</Link>
-            <Link to="/services" className="btn-primary">Our Services</Link>
+            <a href="https://cal.com/sscleanco.tx" className="btn-gold membership-hero-cta">
+              Join the Southern Standard Membership
+            </a>
+            <a href="#one-time-services" className="hero-secondary-link">Looking for a one-time clean? <span>View services ↓</span></a>
           </div>
+          <p className="hero-payment-note">No payment is collected on this website. We’ll review your intake before sending a secure Stripe subscription link.</p>
         </div>
       </section>
 
       {/* ── RIBBON STRIP ── */}
       <div className="ribbon">
-        {['✦ Locally Owned', '✦ Eco-Friendly Products', '✦ Satisfaction Guaranteed'].map(t => (
+        {['✦ Consistent Care', '✦ Priority Scheduling', '✦ Member-Only Value'].map(t => (
           <span key={t}>{t}</span>
         ))}
       </div>
+
+      {/* ── MEMBERSHIP PLANS ── */}
+      <section className="membership-section" aria-labelledby="membership-plans-title">
+        <div className="section-inner">
+          <div className="membership-header">
+            <span className="section-tag">Choose Your Rhythm</span>
+            <h2 id="membership-plans-title">A cleaner home, on your schedule.</h2>
+            <div className="divider" />
+            <p>Simple monthly membership pricing based on your home’s square footage.</p>
+          </div>
+          <div className="membership-grid">
+            {membershipPlans.map((plan) => (
+              <article className={`membership-card ${plan.accent} ${plan.featured ? 'featured' : ''}`} key={plan.name}>
+                {plan.featured && <span className="membership-popular">Most Popular</span>}
+                <div className="membership-card-head">
+                  <span className="membership-medal" aria-hidden="true">{plan.medal}</span>
+                  <h3>{plan.name} Membership</h3>
+                  <p>{plan.cadence}</p>
+                </div>
+                <div className="membership-prices">
+                  {plan.prices.map(([size, price]) => (
+                    <div className="membership-price-row" key={size}>
+                      <span>{size}</span>
+                      <strong className={price.includes('Custom Quote') ? 'custom-price' : ''}>{price}</strong>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+          <p className="membership-quote-note">Weekly Refresh homes larger than 2,500 sq ft: <a href="https://cal.com/sscleanco.tx">contact us for a custom quote.</a></p>
+        </div>
+      </section>
+
+      {/* ── MEMBERSHIP BENEFITS & PROCESS ── */}
+      <section className="membership-details">
+        <div className="section-inner membership-details-grid">
+          <div className="benefits-panel">
+            <span className="section-tag">Always Included</span>
+            <h2>Membership makes clean feel effortless.</h2>
+            <div className="benefit-list">
+              {membershipBenefits.map(([icon, benefit]) => (
+                <div className="benefit-item" key={benefit}>
+                  <span aria-hidden="true">{icon}</span>
+                  <p>{benefit}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="process-panel">
+            <span className="section-tag">How It Works</span>
+            <h2>Personal review. Secure subscription. Reliable service.</h2>
+            <ol className="membership-steps">
+              {bookingSteps.map((step, index) => (
+                <li key={step}><span>{index + 1}</span><p>{step}</p></li>
+              ))}
+            </ol>
+            <a href="https://cal.com/sscleanco.tx" className="btn-gold">Start My Membership Intake</a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ONE-TIME SERVICES ── */}
+      <section className="one-time-section" id="one-time-services" aria-labelledby="one-time-title">
+        <div className="section-inner">
+          <div className="one-time-header">
+            <span className="section-tag">Need Just One Visit?</span>
+            <h2 id="one-time-title">One-Time Services</h2>
+            <div className="divider" />
+            <p>Membership is our signature way to care for your home, but we’re still happy to help with one-time needs.</p>
+          </div>
+          <div className="one-time-grid">
+            {services.map(({ icon, name }) => (
+              <div className="one-time-card" key={name}>
+                <img src={icon} alt="" aria-hidden="true" />
+                <h3>{name}</h3>
+              </div>
+            ))}
+            {new Date() < new Date(2026, 7, 1) && (
+              <div className="one-time-card">
+                <span className="service-symbol" aria-hidden="true">♨</span>
+                <h3>Laundry Service</h3>
+                <small>Available through July 31</small>
+              </div>
+            )}
+          </div>
+          <Link to="/services" className="btn-primary">Explore One-Time Services</Link>
+        </div>
+      </section>
 
       {/* ── WHY CHOOSE US ── */}
       <section className="why-section">
@@ -156,42 +299,6 @@ export default function Home() {
                 <p>{body}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── SERVICES PREVIEW ── */}
-      <section className="services-preview">
-        <div className="services-preview-bg" />
-        <div className="section-inner services-preview-inner">
-          <div className="sp-text">
-            <span className="section-tag">What We Offer</span>
-            <h2>Every Room, Every Corner</h2>
-            <div className="divider divider-left" />
-            <p>
-              From a quick refresh to a full deep clean, we've got a service for every need and every budget. All done with Southern pride and a commitment to spotless results.
-            </p>
-            <ul className="sp-list">
-              {services.map(({ icon, name }) => (
-                <li key={name}><span>{icon}</span> {name}</li>
-              ))}
-            </ul>
-            <Link to="/services" className="btn-primary" style={{ marginTop: '28px' }}>
-              View All Services
-            </Link>
-          </div>
-          <div className="sp-visual">
-            <div className="sp-badge">
-              <div className="sp-badge-inner">
-                <span className="sp-badge-num">100%</span>
-                <span className="sp-badge-label">Satisfaction<br />Guaranteed</span>
-                <span className="sp-badge-star">★★★★★</span>
-              </div>
-            </div>
-            <div className="sp-floral-wrap">
-              <MagnoliaDecor />
-              <BluebonnetDecor />
-            </div>
           </div>
         </div>
       </section>
@@ -251,9 +358,9 @@ export default function Home() {
         <div className="cta-banner-inner">
           <MagnoliaDecor className="cta-mag" />
           <div className="cta-text">
-            <h2>Ready for a Home That Shines?</h2>
-            <p>Book your clean today and let Southern Shine do the rest.</p>
-            <Link to="/book" className="btn-gold">Schedule My Clean</Link>
+            <h2>Make clean your new standard.</h2>
+            <p>Tell us about your home and we’ll match you with the right membership.</p>
+            <a href="https://cal.com/sscleanco.tx" className="btn-gold">Join the Southern Standard</a>
           </div>
           <MagnoliaDecor className="cta-mag flip" />
         </div>

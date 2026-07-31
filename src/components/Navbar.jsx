@@ -9,6 +9,7 @@ export default function Navbar() {
 
   const links = [
     { to: '/', label: 'Home' },
+    { to: '/#membership', label: 'Southern Standard Membership', sectionLink: true },
     { to: '/services', label: 'Services' },
   ];
 
@@ -22,16 +23,20 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="nav-links">
-          {links.map(({ to, label }) => (
-            <Link
-              key={to}
-              to={to}
-              className={`nav-link ${pathname === to ? 'active' : ''}`}
-            >
-              {label}
-            </Link>
+          {links.map(({ to, label, sectionLink }) => (
+            sectionLink ? (
+              <a key={to} href={to} className="nav-link">{label}</a>
+            ) : (
+              <Link
+                key={to}
+                to={to}
+                className={`nav-link ${pathname === to ? 'active' : ''}`}
+              >
+                {label}
+              </Link>
+            )
           ))}
-          <Link to="/book" className="btn-navy nav-cta">Book Now</Link>
+          <Link to="/book" className="btn-navy nav-cta">One-Time Booking</Link>
         </nav>
 
         {/* Mobile hamburger */}
@@ -48,18 +53,24 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       <div className={`mobile-menu ${open ? 'open' : ''}`}>
-        {links.map(({ to, label }) => (
-          <Link
-            key={to}
-            to={to}
-            className={`mobile-link ${pathname === to ? 'active' : ''}`}
-            onClick={() => setOpen(false)}
-          >
-            {label}
-          </Link>
+        {links.map(({ to, label, sectionLink }) => (
+          sectionLink ? (
+            <a key={to} href={to} className="mobile-link" onClick={() => setOpen(false)}>
+              {label}
+            </a>
+          ) : (
+            <Link
+              key={to}
+              to={to}
+              className={`mobile-link ${pathname === to ? 'active' : ''}`}
+              onClick={() => setOpen(false)}
+            >
+              {label}
+            </Link>
+          )
         ))}
         <Link to="/book" className="btn-gold mobile-cta" onClick={() => setOpen(false)}>
-          Book Now
+          One-Time Booking
         </Link>
       </div>
     </header>

@@ -20,6 +20,7 @@ export default function Footer() {
         <div className="footer-links">
           <h4>Quick Links</h4>
           <Link to="/">Home</Link>
+          <Link to="/#membership">Southern Standard Membership</Link>
           <Link to="/services">Services</Link>
           <Link to="/book">Book Now</Link>
           <Link to="/book#booking-policies">Booking Policies</Link>
