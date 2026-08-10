@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import house from '../assets/house.png';
 import box from '../assets/box.png';
 import stars from '../assets/stars.png';
+import flower from '../assets/flower.png';
 import './Services.css';
 
 const services = [
@@ -36,17 +37,34 @@ const services = [
     popular: false,
   },
   {
+    icon: <img src={flower} alt="flower" style={{ width: '5rem', height: '5rem', objectFit: 'contain' }} />,
+    name: 'Priority Clean',
+    tagline: 'Focused cleaning where it matters most',
+    description: 'A quick, high-impact clean focused on the busiest areas of your home. Perfect when you need the essentials refreshed without booking a full-home service.',
+    baseRate: '$150',
+    baseDesc: 'Covers travel, professional supplies, and 1.5 hours of focused cleaning',
+    includes: [
+      'Choose the rooms or tasks that need the most attention',
+      'Focused dusting and surface wiping',
+      'Vacuuming and mopping in selected areas',
+      'Kitchen or bathroom touch-ups as time allows',
+    ],
+    note: 'Priority Clean is a time-based service. We will work through your requested areas in priority order during the 1.5-hour appointment.',
+    price: '$150',
+    popular: false,
+  },
+  {
     icon: <img src={stars} alt="stars" style={{ width: '5rem', height: '5rem', objectFit: 'contain' }} />,
     name: 'Deep Clean',
     tagline: 'Top-to-bottom brilliance',
     description: 'A "top-to-bottom" restorative service. No quotes required — just thorough, high-intensity cleaning to get your home back to its best.',
-    baseRate: '$300',
+    baseRate: '$325',
     baseDesc: 'Covers travel, heavy-duty supplies, and your first 3 hours',
     additionalRate: '$45/hr after the initial 3 hours',
     estimates: [
-      { label: 'Small Homes / Apartments (3–4 hrs)', range: '$300 – $345' },
-      { label: 'Average Family Homes (5–7 hrs)', range: '$390 – $480' },
-      { label: 'Large Estates (8+ hrs)', range: '$525+' },
+      { label: 'Small Homes / Apartments (3–4 hrs)', range: '$325 – $370' },
+      { label: 'Average Family Homes (5–7 hrs)', range: '$415 – $505' },
+      { label: 'Large Estates (8+ hrs)', range: '$550+' },
     ],
     includes: [
       'Everything in a Standard Clean',
@@ -64,7 +82,7 @@ const services = [
       'Garage Sweep & Tidy: $45',
     ],
     note: 'Pro-Tip: Deep cleans require more physical labor and specialized degreasers. While a maintenance clean maintains the shine, a deep clean finds the shine again.',
-    price: 'Starting at $300',
+    price: 'Starting at $325',
     popular: true,
   },
   {
@@ -72,13 +90,13 @@ const services = [
     name: 'Move-In / Move-Out',
     tagline: 'Fresh starts, clean slates',
     description: 'An intensive, empty-home detail designed to ensure a "white glove" finish for new occupants or to secure your security deposit.',
-    baseRate: '$350',
+    baseRate: '$375',
     baseDesc: 'Covers travel, heavy-duty supplies, and your first 3 hours',
     additionalRate: '$50/hr after the initial 3 hours',
     estimates: [
-      { label: 'Small Homes / Apartments (4–5 hrs)', range: '$400 – $450' },
-      { label: 'Average Family Homes (6–8 hrs)', range: '$500 – $600' },
-      { label: 'Large Estates (9+ hrs)', range: '$650+' },
+      { label: 'Small Homes / Apartments (4–5 hrs)', range: '$425 – $475' },
+      { label: 'Average Family Homes (6–8 hrs)', range: '$525 – $625' },
+      { label: 'Large Estates (9+ hrs)', range: '$675+' },
     ],
     includes: [
       'Inside Everything: Deep cleaning all kitchen cabinets, bathroom vanities, linen closets & wardrobes',
@@ -94,7 +112,7 @@ const services = [
       'Carpet Steam Cleaning: Custom quote',
     ],
     note: 'For best results, electricity and water must be on, and the home must be completely free of furniture and personal belongings.',
-    price: 'Starting at $350',
+    price: 'Starting at $375',
     popular: false,
   },
 ];
